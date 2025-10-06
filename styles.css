@@ -145,6 +145,36 @@ body {
   animation: pulse-glow 2s infinite;
 }
 
+/* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.75s ease, visibility 0.75s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+#preloader.preloader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-text {
+  font-family: 'Orbitron', monospace;
+  font-size: 2rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  animation: blink-cursor 1.2s infinite steps(1, start);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .glass-card {

@@ -1,3 +1,11 @@
+// --- Preloader ---
+window.onload = function() {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    preloader.classList.add('preloader-hidden');
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   // --- Mobile Menu Toggle ---
   const mobileMenuButton = document.getElementById('mobile-menu-button');
