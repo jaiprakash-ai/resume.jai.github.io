@@ -127,21 +127,10 @@ contactForm?.addEventListener('submit', async e => {
   submitButton.disabled = true;
 
   try {
-    const response = await fetch('/api/send-email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, message })
-    });
-
-    if (response.ok) {
-      formMessage.textContent = 'Message sent successfully!';
-      formMessage.style.color = '#00ffff'; // Cyan
-      contactForm.reset();
-    } else {
-      const data = await response.json();
-      formMessage.textContent = data.message || 'Failed to send message. Please try again.';
-      formMessage.style.color = '#ff00ff'; // Magenta
-    }
+    // Temporarily disable sending and show "Coming Soon" message
+    formMessage.textContent = 'Message sending is coming soon. Thank you for your patience!';
+    formMessage.style.color = '#00ffff'; // Cyan
+    contactForm.reset();
   } catch (error) {
     formMessage.textContent = 'An error occurred. Please check your connection and try again.';
     formMessage.style.color = '#ff00ff'; // Magenta
