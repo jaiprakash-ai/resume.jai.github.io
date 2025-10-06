@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jai Prakash Saini - Cybersecurity Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/framer-motion@10.12.16/dist/framer-motion.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="antialiased bg-black text-white overflow-x-hidden">
+
+  <!-- Custom Cursor -->
+  <div id="cursor" class="fixed w-4 h-4 bg-cyan-400 rounded-full pointer-events-none z-50 mix-blend-difference"></div>
+  <div id="cursor-ring" class="fixed w-8 h-8 border-2 border-cyan-400 rounded-full pointer-events-none z-40"></div>
+
+  <!-- Parallax Background -->
+  <div id="parallax-bg" class="fixed inset-0 z-0">
+    <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
+    <div class="absolute inset-0 opacity-20">
+      <div class="grid grid-cols-20 grid-rows-20 h-full w-full">
+        <!-- Neon Grid -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-cyan-500/20">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold font-orbitron text-cyan-400">JAI PRAKASH</div>
+      <nav class="hidden md:flex space-x-8">
+        <a href="#hero" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 relative">Home</a>
+        <a href="#about" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 relative">About</a>
+        <a href="#skills" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 relative">Skills</a>
+        <a href="#tools" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 relative">Tools</a>
+        <a href="#projects" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 relative">Projects</a>
+        <a href="#certificates" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 relative">Certificates</a>
+        <a href="#education" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 relative">Education</a>
+        <a href="#achievements" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 relative">Achievements</a>
+        <a href="#contact" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 relative">Contact</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden text-cyan-400 focus:outline-none" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-md border-t border-cyan-500/20">
+      <nav class="flex flex-col space-y-4 p-4">
+        <a href="#hero" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300">Home</a>
+        <a href="#about" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300">About</a>
+        <a href="#skills" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300">Skills</a>
+        <a href="#tools" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300">Tools</a>
+        <a href="#projects" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300">Projects</a>
+        <a href="#certificates" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300">Certificates</a>
+        <a href="#education" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300">Education</a>
+        <a href="#achievements" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300">Achievements</a>
+        <a href="#contact" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 md:pt-32 max-w-4xl mx-auto z-10">
+    <div class="motion-section" data-animation="fade-in-up">
+      <h1 class="text-6xl md:text-8xl font-black font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-magenta-400 to-lime-400 mb-4">
+        Hi — I'm Jai Prakash Saini
+      </h1>
+      <h2 class="text-2xl md:text-4xl font-semibold text-gray-300 mb-6 font-orbitron">
+        Aspiring Cybersecurity Professional & AI Enthusiast
+      </h2>
+      <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+        "Protecting systems, exploring exploits, and building intelligent defenses."
+      </p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a href="Jai_Prakash_Resume.pdf" download="Jai_Prakash_Resume.pdf" class="px-8 py-4 bg-gradient-to-r from-cyan-500 to-magenta-500 text-black font-bold rounded-lg hover:from-cyan-400 hover:to-magenta-400 transition duration-300 glow-button">
+          ⚡ Download Resume
+        </a>
+        <a href="#contact" class="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-bold rounded-lg hover:bg-cyan-400 hover:text-black transition duration-300">
+          💬 Contact Me
+        </a>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+      <div class="animate-bounce">
+        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about" class="relative py-20 px-6 z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="motion-section" data-animation="fade-in-up">
+        <h2 class="text-4xl font-bold font-orbitron text-center mb-16 text-cyan-400">About Me</h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="glass-card p-8">
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              I'm an aspiring cybersecurity professional with a strong foundation in networking, Linux, ethical hacking, and programming (C, C++, Python). I've built reconnaissance tools like ShadowRipper and enjoy exploring how AI can enhance modern security defense and attack simulations.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-3">
+                <span class="text-cyan-400">📍</span>
+                <span>Jaipur, India</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="text-magenta-400">🎓</span>
+                <span>B.Tech CSE (AI) | Anand International College of Engineering (2023–2027)</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="text-lime-400">⚔️</span>
+                <span>Currently pursuing Certified Ethical Hacking</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="text-cyan-400">💡</span>
+                <span>Interests: Penetration Testing, AI in Security, OSINT, Cyber Forensics</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <div class="relative">
+              <div class="w-64 h-64 rounded-full border-4 border-cyan-400/50 overflow-hidden glow">
+                <img src="image1.jpg" alt="Jai Prakash Saini" class="w-full h-full object-cover" />
+              </div>
+              <div class="absolute inset-0 rounded-full border-2 border-magenta-400/30 animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="relative py-20 px-6 z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="motion-section" data-animation="fade-in-up">
+        <h2 class="text-4xl font-bold font-orbitron text-center mb-16 text-cyan-400">Technical Skills</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="glass-card p-8">
+            <h3 class="text-2xl font-semibold font-orbitron text-magenta-400 mb-6">Core Skills</h3>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="skill-item">Ethical Hacking</div>
+              <div class="skill-item">Bug Bounty Hunting</div>
+              <div class="skill-item">Web & Network Penetration Testing</div>
+              <div class="skill-item">Linux Administration</div>
+              <div class="skill-item">OSINT & Reconnaissance</div>
+              <div class="skill-item">Social Engineering</div>
+            </div>
+          </div>
+          <div class="glass-card p-8">
+            <h3 class="text-2xl font-semibold font-orbitron text-lime-400 mb-6">Programming</h3>
+            <div class="grid grid-cols-3 gap-4">
+              <div class="skill-item">C</div>
+              <div class="skill-item">C++</div>
+              <div class="skill-item">Python</div>
+              <div class="skill-item">HTML</div>
+              <div class="skill-item">CSS</div>
+              <div class="skill-item">JavaScript</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section id="tools" class="relative py-20 px-6 z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="motion-section" data-animation="fade-in-up">
+        <h2 class="text-4xl font-bold font-orbitron text-center mb-16 text-magenta-400">Security Tools</h2>
+        <div class="glass-card p-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="tool-item">Burp Suite</div>
+            <div class="tool-item">Acunetix</div>
+            <div class="tool-item">Nessus</div>
+            <div class="tool-item">NetSparker</div>
+            <div class="tool-item">OWASP ZAP</div>
+            <div class="tool-item">Nmap</div>
+            <div class="tool-item">Wireshark</div>
+            <div class="tool-item">Nikto</div>
+            <div class="tool-item">Metasploit</div>
+            <div class="tool-item">Kali Linux</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="relative py-20 px-6 z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="motion-section" data-animation="fade-in-up">
+        <h2 class="text-4xl font-bold font-orbitron text-center mb-16 text-lime-400">Projects</h2>
+        <div class="glass-card p-8 relative overflow-hidden">
+          <div class="absolute inset-0 opacity-10">
+            <div class="terminal-bg"></div>
+          </div>
+          <div class="relative z-10">
+            <h3 class="text-2xl font-semibold font-orbitron text-cyan-400 mb-4">🕶 ShadowRipper</h3>
+            <p class="text-gray-300 mb-6">
+              A Python-based network reconnaissance and information gathering tool. Scans open ports, identifies services, performs WHOIS lookup, SSL detection, and banner grabbing. Inspired by Nmap, built with Colorama for colored terminal output.
+            </p>
+            <a href="https://github.com/jaiprakash-ai/ShadowRipper" target="_blank" class="inline-block px-6 py-3 bg-gradient-to-r from-cyan-500 to-magenta-500 text-black font-bold rounded-lg hover:from-cyan-400 hover:to-magenta-400 transition duration-300 glow-button">
+              💻 View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section id="certificates" class="relative py-20 px-6 z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="motion-section" data-animation="fade-in-up">
+        <h2 class="text-4xl font-bold font-orbitron text-center mb-16 text-cyan-400">Certificates</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="glass-card p-6 hover:scale-105 transition duration-300">
+            <h3 class="text-lg font-semibold font-orbitron text-magenta-400 mb-2">Networking Fundamentals</h3>
+            <p class="text-gray-300 mb-1">IIHT, Jaipur</p>
+            <p class="text-sm text-gray-400">Sep–Nov 2024</p>
+          </div>
+          <div class="glass-card p-6 hover:scale-105 transition duration-300">
+            <h3 class="text-lg font-semibold font-orbitron text-lime-400 mb-2">Linux System Essentials</h3>
+            <p class="text-gray-300 mb-1">IIHT, Jaipur</p>
+            <p class="text-sm text-gray-400">Nov 2024–Jan 2025</p>
+          </div>
+          <div class="glass-card p-6 hover:scale-105 transition duration-300">
+            <h3 class="text-lg font-semibold font-orbitron text-cyan-400 mb-2">Python Programming</h3>
+            <p class="text-gray-300 mb-1">GUVI (IIT Madras Initiative)</p>
+            <p class="text-sm text-gray-400">Nov 2023</p>
+          </div>
+          <div class="glass-card p-6 hover:scale-105 transition duration-300">
+            <h3 class="text-lg font-semibold font-orbitron text-magenta-400 mb-2">C & C++ Programming</h3>
+            <p class="text-gray-300 mb-1">Samyak Classes</p>
+            <p class="text-sm text-gray-400">Jul–Sep 2023</p>
+          </div>
+          <div class="glass-card p-6 hover:scale-105 transition duration-300">
+            <h3 class="text-lg font-semibold font-orbitron text-lime-400 mb-2">Certified Ethical Hacking</h3>
+            <p class="text-gray-300 mb-1">Skill Horizon</p>
+            <p class="text-sm text-gray-400">In Progress, Feb 2025</p>
+          </div>
+          <div class="glass-card p-6 hover:scale-105 transition duration-300">
+            <h3 class="text-lg font-semibold font-orbitron text-cyan-400 mb-2">Wi-Fi Hacking & Security</h3>
+            <p class="text-gray-300 mb-1">Udemy</p>
+            <p class="text-sm text-gray-400">Nov 2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="relative py-20 px-6 z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="motion-section" data-animation="fade-in-up">
+        <h2 class="text-4xl font-bold font-orbitron text-center mb-16 text-magenta-400">Education</h2>
+        <div class="glass-card p-8 max-w-2xl mx-auto">
+          <h3 class="text-2xl font-semibold font-orbitron text-cyan-400 mb-2">Anand International College of Engineering, Jaipur</h3>
+          <p class="text-lg text-gray-300 mb-2">B.Tech in Computer Science (Artificial Intelligence)</p>
+          <p class="text-gray-400">📅 2023 – 2027</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section id="achievements" class="relative py-20 px-6 z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="motion-section" data-animation="fade-in-up">
+        <h2 class="text-4xl font-bold font-orbitron text-center mb-16 text-lime-400">Achievements</h2>
+        <div class="space-y-8">
+          <div class="glass-card p-6 flex items-center space-x-4">
+            <div class="w-4 h-4 bg-cyan-400 rounded-full glow"></div>
+            <p class="text-gray-300">Built & published open-source recon tool (ShadowRipper)</p>
+          </div>
+          <div class="glass-card p-6 flex items-center space-x-4">
+            <div class="w-4 h-4 bg-magenta-400 rounded-full glow"></div>
+            <p class="text-gray-300">Active learner in Ethical Hacking & AI integration</p>
+          </div>
+          <div class="glass-card p-6 flex items-center space-x-4">
+            <div class="w-4 h-4 bg-lime-400 rounded-full glow"></div>
+            <p class="text-gray-300">Reported vulnerabilities in small web apps (practice labs)</p>
+          </div>
+          <div class="glass-card p-6 flex items-center space-x-4">
+            <div class="w-4 h-4 bg-cyan-400 rounded-full glow"></div>
+            <p class="text-gray-300">Participated in cyber bootcamps & CTF challenges</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internship Experience -->
+  <section id="experience" class="relative py-20 px-6 z-10 scroll-mt-20">
+    <div class="max-w-7xl mx-auto">
+      <div class="motion-section" data-animation="fade-in-up">
+        <h2 class="text-4xl font-bold font-orbitron text-center mb-16 text-cyan-400">Internship Experience</h2>
+        <div class="glass-card p-8">
+          <h3 class="text-2xl font-semibold font-orbitron text-magenta-400 mb-4">Cyber Security Intern — Skill Horizon NextGen Pvt. Ltd.</h3>
+          <p class="text-gray-400 mb-4">Duration: June 2025 to Present</p>
+          <ul class="space-y-2 text-gray-300">
+            <li>• Gained hands-on experience in ethical hacking, network security, and vulnerability assessment.</li>
+            <li>• Worked on real-time threat analysis, port scanning, reconnaissance (Nmap, Wireshark), and live penetration testing projects.</li>
+            <li>• Implemented Linux-based security hardening and web application testing.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="relative py-20 px-6 z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="motion-section" data-animation="fade-in-up">
+        <h2 class="text-4xl font-bold font-orbitron text-center mb-16 text-magenta-400">Contact</h2>
+        <div class="grid md:grid-cols-2 gap-12">
+          <div class="glass-card p-8">
+            <form id="contact-form" class="space-y-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                <input type="text" class="w-full px-4 py-3 bg-gray-800 border border-cyan-500/30 rounded-lg focus:border-cyan-400 focus:outline-none text-white" required>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                <input type="email" class="w-full px-4 py-3 bg-gray-800 border border-cyan-500/30 rounded-lg focus:border-cyan-400 focus:outline-none text-white" required>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                <textarea rows="4" class="w-full px-4 py-3 bg-gray-800 border border-cyan-500/30 rounded-lg focus:border-cyan-400 focus:outline-none text-white" required></textarea>
+              </div>
+              <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-magenta-500 text-black font-bold rounded-lg hover:from-cyan-400 hover:to-magenta-400 transition duration-300 glow-button">
+                Send Message
+              </button>
+            </form>
+          </div>
+          <div class="space-y-8">
+            <div class="glass-card p-6 flex items-center space-x-4 hover:scale-105 transition duration-300">
+              <span class="text-2xl flex-shrink-0">📧</span>
+              <div class="flex-grow">
+                <a href="mailto:jaiprakash1108aug@gmail.com" id="email-text" class="text-cyan-400 hover:text-cyan-300 break-all">jaiprakash1108aug@gmail.com</a>
+              </div>
+              <button id="copy-email-btn" class="ml-4 px-3 py-1 text-sm bg-gray-700 border border-cyan-500/30 rounded-md hover:bg-cyan-500/20 transition duration-300">Copy</button>
+            </div>
+            <div class="glass-card p-6 flex items-center space-x-4 hover:scale-105 transition duration-300">
+              <span class="text-2xl">🔗</span>
+              <a href="http://www.linkedin.com/in/jai-prakash-saini-aa5a202b6" target="_blank" class="text-magenta-400 hover:text-magenta-300">LinkedIn Profile</a>
+            </div>
+            <div class="glass-card p-6 flex items-center space-x-4 hover:scale-105 transition duration-300">
+              <span class="text-2xl">💻</span>
+              <a href="https://github.com/jaiprakash-ai" target="_blank" class="text-lime-400 hover:text-lime-300">GitHub Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative py-12 px-6 z-10 border-t border-cyan-500/20">
+    <div class="max-w-7xl mx-auto text-center">
+      <p class="text-gray-400 mb-6">© 2025 Jai Prakash Saini — Crafted with ❤️ using code & curiosity.</p>
+      <div class="flex justify-center space-x-6 mb-6">
+        <button id="theme-toggle" class="px-4 py-2 bg-gray-800 border border-cyan-500/30 rounded-lg text-cyan-400 hover:bg-cyan-500/10 transition duration-300">
+          Neon ↔ Dim
+        </button>
+        <button id="scroll-top" class="px-4 py-2 bg-gray-800 border border-cyan-500/30 rounded-lg text-cyan-400 hover:bg-cyan-500/10 transition duration-300">
+          ↑ Top
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
