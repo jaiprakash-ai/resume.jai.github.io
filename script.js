@@ -105,11 +105,10 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Contact form submission (placeholder)
 const contactForm = document.getElementById('contact-form');
 contactForm?.addEventListener('submit', async e => {
   e.preventDefault();
-  
+
   const name = contactForm.querySelector('input[type="text"]').value;
   const email = contactForm.querySelector('input[type="email"]').value;
   const message = contactForm.querySelector('textarea').value;
@@ -125,8 +124,11 @@ contactForm?.addEventListener('submit', async e => {
       body: JSON.stringify({ name, email, message })
     });
 
-    alert(await response.text()); // Show success/error message from backend
-    contactForm.reset();
+    const data = await response.json();
+    alert(data.message); // Show success/error message from backend
+    if (response.ok) {
+      contactForm.reset();
+    }
   } catch (error) {
     alert('Failed to send message. Please try again later.');
   } finally {
