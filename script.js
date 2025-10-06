@@ -113,6 +113,15 @@ contactForm?.addEventListener('submit', async e => {
   const email = contactForm.querySelector('input[type="email"]').value;
   const message = contactForm.querySelector('textarea').value;
   const submitButton = contactForm.querySelector('button[type="submit"]');
+  let formMessage = document.getElementById('form-message');
+
+  // Create message element if it doesn't exist
+  if (!formMessage) {
+    formMessage = document.createElement('div');
+    formMessage.id = 'form-message';
+    formMessage.className = 'mt-4 text-center';
+    contactForm.appendChild(formMessage);
+  }
 
   submitButton.textContent = 'Sending...';
   submitButton.disabled = true;
@@ -124,13 +133,18 @@ contactForm?.addEventListener('submit', async e => {
       body: JSON.stringify({ name, email, message })
     });
 
-    const data = await response.json();
-    alert(data.message); // Show success/error message from backend
     if (response.ok) {
+      formMessage.textContent = 'Message sent successfully!';
+      formMessage.style.color = '#00ffff'; // Cyan
       contactForm.reset();
+    } else {
+      const data = await response.json();
+      formMessage.textContent = data.message || 'Failed to send message. Please try again.';
+      formMessage.style.color = '#ff00ff'; // Magenta
     }
   } catch (error) {
-    alert('Failed to send message. Please try again later.');
+    formMessage.textContent = 'An error occurred. Please check your connection and try again.';
+    formMessage.style.color = '#ff00ff'; // Magenta
   } finally {
     submitButton.textContent = 'Send Message';
     submitButton.disabled = false;

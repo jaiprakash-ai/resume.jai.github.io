@@ -19,17 +19,24 @@ export default async function handler(req, res) {
     port: 465,
     secure: true,
     auth: {
-      user: process.env.SMTP_USER, // Your email address
-      pass: process.env.SMTP_PASS, // Your email password or app password
+      user: process.env.GMAIL_USER, // Correct environment variable
+      pass: process.env.GMAIL_PASS, // Correct environment variable
     },
   });
 
   const mailOptions = {
-    from: `"${name}" <${email}>`,
-    to: process.env.SMTP_USER,
+    from: `"${name}" <${process.env.GMAIL_USER}>`, // Sending from your address
+    to: process.env.GMAIL_USER, // Sending to your address
     subject: `New Contact Form Message from ${name}`,
-    text: message,
-    html: `<p>${message}</p><p>From: ${name} (${email})</p>`,
+    replyTo: email, // This allows you to directly reply to the user
+    text: `You have a new message from:\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+    html: `<p>You have a new message from:</p>
+           <ul>
+             <li><strong>Name:</strong> ${name}</li>
+             <li><strong>Email:</strong> ${email}</li>
+           </ul>
+           <p><strong>Message:</strong></p>
+           <p>${message}</p>`,
   };
 
   try {
